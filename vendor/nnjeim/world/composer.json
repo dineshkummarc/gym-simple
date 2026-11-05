@@ -1,0 +1,67 @@
+{
+    "name": "nnjeim/world",
+    "description": "Laravel countries, states, cities, currencies, languages and IP geolocation",
+    "keywords": [
+        "laravel",
+        "lumen",
+        "countries",
+        "cities",
+        "states",
+        "timezones",
+        "currencies",
+        "languages",
+        "geolocation",
+        "geoip",
+        "ip-location",
+        "maxmind"
+    ],
+    "homepage": "https://github.com/nnjeim/world.git",
+    "license": "MIT",
+    "type": "laravel-package",
+    "authors": [
+        {
+            "name": "Najm Njeim",
+            "email": "najm@njeim.net",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "geoip2/geoip2": "^3.4",
+        "guzzlehttp/guzzle": "^7.8 || ^8.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^8.0 || ^9.0 || ^10.0 || ^11.0",
+        "phpunit/phpunit": "^10.0 || ^11.0 || ^12.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Nnjeim\\World\\": "src/",
+            "Nnjeim\\World\\Database\\Seeders\\": "src/Database/Seeders/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Nnjeim\\World\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "phpunit",
+        "test-coverage": "phpunit --coverage-html coverage"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Nnjeim\\World\\WorldServiceProvider"
+            ],
+            "aliases": {
+                "Country": "Nnjeim\\World\\World"
+            }
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
