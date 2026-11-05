@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use Illuminate\Support\Facades\Schema;
 use App\Contracts\SequenceRepository;
 use App\Contracts\SettingsRepository;
 use App\Contracts\TenantContext;
@@ -63,6 +64,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(Request $request): void
     {
+		Schema::defaultStringLength(191);
         if (str_starts_with(Data::string(config('app.url')), 'https://') || $request->isSecure()) {
             URL::forceScheme('https');
         }
